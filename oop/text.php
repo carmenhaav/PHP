@@ -11,6 +11,12 @@ class text
 	// class variables = instance variables
 	var $str = '';
 
+	// constructor
+	function __construct($s = ''){
+		$this->setText($s);
+	} // construct
+
+
 	// methods
 	// set text function
 	function setText($s){
