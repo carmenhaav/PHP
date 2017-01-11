@@ -26,4 +26,13 @@ echo '<pre>';
 
 // show object output
 $sentence->show();
+
+// set text
+$sentence2 = new text('Hello, text by constructor!');
+
+// control object output
+echo '<pre>';
+print_r($sentence2);
+echo '<pre>';
+
 ?>
