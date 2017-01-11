@@ -27,7 +27,7 @@ class ctext extends text
 			parent::show(); // use text class show function
 		}
 		else {
-			echo 'font color="'.$this->color.'">'.$this->str.'</font><br/>';
+			echo '<font color="'.$this->color.'">'.$this->str.'</font><br/>';
 		}
 	}
 } // ctext ends
