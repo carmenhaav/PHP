@@ -35,4 +35,8 @@ echo '<pre>';
 print_r($sentence2);
 echo '<pre>';
 
+// show object output
+$sentence2->show();
+
+
 ?>
