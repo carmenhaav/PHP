@@ -49,7 +49,7 @@ class template
 
 		//
 		if($this->content === false){
-			echo 'Ei saanud lugeda faili.'.$this->file.<br/>;
+			echo 'Ei saanud lugeda faili.'.$this->file.'<br/>';
 			exit;
 		}
 
