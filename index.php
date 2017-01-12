@@ -13,15 +13,8 @@ require_once CLASSES_DIR.'template.php';
 // and use it
 
 // create and empty template object
-$tmpl = new template();
-//  set up file name for the template
-$tmpl->file = 'main.html';
-// control the content of the template object
-echo '<pre>';
-print_r($tmpl);
-echo '<pre>';
-// load file content of template
-$tmpl->loadFile();
+$tmpl = new template('main.html');
+
 // control the content of the template object
 echo '<pre>';
 print_r($tmpl);
