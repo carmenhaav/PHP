@@ -6,11 +6,10 @@
  * Date: 12.01.2017
  * Time: 12:58
  */
-// create and template object
+// create and template object and use it
 define ('CLASSES_DIR', 'classes/');
 define ('TMPL_DIR', 'tmpl/');
 require_once CLASSES_DIR.'template.php';
-// and use it
 
 // create an empty template object
 $tmpl = new template('main.html');
