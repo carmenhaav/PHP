@@ -64,7 +64,7 @@ class template
 	function readFile($f){
 		$this->content = file_get_contents($f);
 	} // readFile
-
+	
 }// class end
 
 ?>
