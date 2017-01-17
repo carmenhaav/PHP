@@ -39,6 +39,10 @@ class http
 			}
 		}
 	} // initConst
-}// http end
 
+	// setup data for http object
+	function set() {
+		
+	}
+}// http end
 ?>
