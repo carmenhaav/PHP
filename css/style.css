@@ -1,0 +1,17 @@
+/* style.css */
+/* main.html stylesheet */
+/* Date: 13.01.2017 */
+/* Author: Carmen Haav */
+
+body {
+	background-color: #f2f2f2;
+}
+
+table {
+	border-collapse: collapse;
+	font-family: inherit;
+}
+
+table, tr, td {
+	border: 1px solid black;
+}
