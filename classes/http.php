@@ -15,10 +15,10 @@ class http
 
 	// construct
 	// object creation and initializing by init() and initConst() methods
-	function construct() {
+	function __construct() {
 		$this->init();
-		$this->initConst()
-	}
+		$this->initConst();
+	} // __construct
 
 
 	// initialize class variables
@@ -34,11 +34,11 @@ class http
 	function initConst() {
 		$vars = array('REMOTE_ADDR', 'PHP_SELF', 'SCRIPT_NAME', 'HTTP_HOST');
 		foreach ($vars as $var) {
-			if(!defined($var)) {
-				define($var, $this->server[$var])
+			if(!defined($var) and isset($this->server[$var])) {
+				define($var, $this->server[$var]);
 			}
 		}
-	}
+	} // initConst
 }// http end
 
 ?>
