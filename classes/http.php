@@ -41,8 +41,8 @@ class http
 	} // initConst
 
 	// setup data for http object
-	function set() {
-		
+	function set($name, $val) {
+		$this->vars[$name] = $val;
 	}
 }// http end
 ?>
