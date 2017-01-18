@@ -17,7 +17,11 @@ if (file_exists($fn) and is_file($fn) and is_readable($fn)){
 	require_once $fn;
 } else{
 	// useful default act
+	// define default act file path
+	$fn = ACTS_DIR.DEFAULT.'.php';
 	
+	// define new value for act element in url
+	$http->set('act', )
 }
 
 ?>
