@@ -10,9 +10,14 @@
 // create menu template objects for menu and menu items
 $menu = new template('menu.menu'); // menu directory is file menu.html menu/menu.html
 $item = new template('menu.item');
-echo '<pre>';
-print_r($menu);
-print_r($item);
-echo '</pre>';
 
+//add pair of template element names and real values
+$item->set('name', 'Esimene leht');
+$link = $http->getLink('page'=>'first');
+$item->set('link', $link);
+
+// control created item output
+echo '<pre>';
+print_r($item);
+echo '<pre>';
 ?>
