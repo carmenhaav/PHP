@@ -17,8 +17,18 @@ $link = $http->getLink(array('page'=>'first'));
 $item->set('link', $link);
 
 // control created item output
-echo '<pre>';
+/*echo '<pre>';
 print_r($item);
+echo '<pre>';*/
+
+// add menu item to menu
+ $menu->set('items', $item->parse());
+// control created menu output
 echo '<pre>';
-echo $item->parse();
+print_r($menu);
+echo '<pre>';
+
+// output menu
+echo $menu->parse();
+
 ?>
