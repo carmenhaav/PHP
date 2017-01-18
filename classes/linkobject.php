@@ -46,6 +46,10 @@ class linkobject extends http
 	}// addTo link
 
 	// merge baseUrl an dlink with  data pairs
+	/**
+	 * @param array $add
+	 * @return bool|string
+	 */
 	function getLink($add = array()) {
 		$link = '';
 		foreach ($add as $name => $val) {
