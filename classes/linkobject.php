@@ -57,7 +57,7 @@ class linkobject extends http
 		}
 		// control if link is not empty
 		if($link !='') {
-			$this->baseUrl.'?'.$link; // http://IP/path_to_script.php?name=value
+			$link = $this->baseUrl.'?'.$link; // http://IP/path_to_script.php?name=value
 		}
 		else {
 			$link = $this->baseUrl;

@@ -5,6 +5,12 @@
  * Date: 17.01.2017
  * Time: 12:48
  */
+
+// useful function
+function fixHtml($val){
+	return htmlentities($val);
+}fixHtml
+
 class http
 {// http begin
 	// class variables
@@ -44,5 +50,10 @@ class http
 	function set($name, $val) {
 		$this->vars[$name] = $val;
 	}
+
+	// get element_value according to the element_name
+	function get($name){
+
+	} // get
 }// http end
 ?>
