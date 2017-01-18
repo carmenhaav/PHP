@@ -9,7 +9,7 @@
 // useful function
 function fixHtml($val){
 	return htmlentities($val);
-}fixHtml
+} // fixHtml
 
 class http
 {// http begin
