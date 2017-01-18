@@ -16,7 +16,7 @@ class linkobject extends http
 	// class variables
 	var $baseUrl = false; // base URL
 	var $protocol = 'http://'; // protocol for URL - http
-	var $delim = '$amp;'; // & html tag name1=value1&name2=value2
+	var $delim = '&amp;'; // & html tag name1=value1&name2=value2
 	var $eq = '='; // = for URL element pair element_name = element_value
 
 	// class methods to help to make the url link
