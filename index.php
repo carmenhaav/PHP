@@ -7,10 +7,10 @@
  * Time: 12:58
  */
 // create and template object and use it
-define ('CLASSES_DIR', 'classes/');
-define ('TMPL_DIR', 'tmpl/');
-define ('STYLE_DIR', 'css/');
-define('ACTS_DIR', 'acts/');
+define ('CLASSES_DIR', 'classes/'); // classes path
+define ('TMPL_DIR', 'tmpl/'); // templates path
+define ('STYLE_DIR', 'css/'); // style path
+define('ACTS_DIR', 'acts/'); // acts path
 require_once CLASSES_DIR.'template.php';
 
 // create an empty template object
