@@ -19,7 +19,20 @@ $tmpl = new template('main');
 $tmpl->set('style', STYLE_DIR.'style.css');
 
 $tmpl->set('header', 'minu lehe pealkiri');
-$tmpl->set('menu', 'minu menüü');
+
+// import http class
+require_once CLASSES_DIR.'http.php';
+
+// import linkobject class
+require_once CLASSES_DIR.'linkobject.php';
+
+// create and output linkobject object
+$http = new linkobject();
+// create and output menu
+//  import menu file
+require_once 'menu.php';
+$tmpl->set('menu', $menu->parse());
+
 $tmpl->set('nav_bar', 'minu navigatsioon');
 $tmpl->set('lang_bar', 'minu keeleriba');
 $tmpl->set('content', 'minu sisu');
@@ -30,15 +43,6 @@ print_r($tmpl);
 echo '<pre>';
 */
 echo $tmpl->parse();
-
-// import http class
-require_once CLASSES_DIR.'http.php';
-
-// import linkobject class
-require_once CLASSES_DIR.'linkobject.php';
-
-// create and output linkobject object
-$http = new linkobject();
 
 // control http object output
 echo '<pre>';
@@ -64,8 +68,4 @@ echo '<pre>';
 // control link creation
 $link = $http->getLink(array('kasutaja'=>'Carmen', 'parool'=>'qwerty'));
 echo $link.'<br />';
-
-// control menu
-//  import menu file
-require_once 'menu.php';
 ?>
