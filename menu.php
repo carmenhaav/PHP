@@ -10,5 +10,9 @@
 // create menu template objects for menu and menu items
 $menu = new template('menu.menu'); // menu directory is file menu.html menu/menu.html
 $item = new template('menu.item');
+echo '<pre>';
+print_r($menu);
+print_r($item);
+echo '</pre>';
 
 ?>
