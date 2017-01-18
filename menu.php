@@ -13,7 +13,7 @@ $item = new template('menu.item');
 
 //add pair of template element names and real values
 $item->set('name', 'Esimene leht');
-$link = $http->getLink('page'=>'first');
+$link = $http->getLink(array('page'=>'first'));
 $item->set('link', $link);
 
 // control created item output
