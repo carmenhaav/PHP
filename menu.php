@@ -10,6 +10,8 @@
 // create menu template objects for menu and menu items
 $menu = new template('menu.menu'); // menu directory is file menu.html menu/menu.html
 $item = new template('menu.item');
+//
+// menu item creation - begin
 
 //add pair of template element names and real values
 $item->set('name', 'Esimene leht');
@@ -23,6 +25,9 @@ echo '<pre>';*/
 
 // add menu item to menu
  $menu->set('items', $item->parse());
+
+// menu item creation - end
+//
 // control created menu output
 echo '<pre>';
 print_r($menu);
