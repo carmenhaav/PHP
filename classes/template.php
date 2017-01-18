@@ -54,7 +54,11 @@ class template
 			$this->readFile($f);
 		}
 
-		//
+		// if html template files are in inner directories
+		// represented as dir.file
+		$f = TMPL_DIR.str_replace('.', '/', $this->file).'.html';
+
+		// if some problems
 		if($this->content === false){
 			echo 'Ei saanud lugeda faili.'.$this->file.'<br/>';
 			exit;
