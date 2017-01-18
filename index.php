@@ -34,8 +34,11 @@ echo $tmpl->parse();
 // import http class
 require_once CLASSES_DIR.'http.php';
 
-// create and output http object
-$http = new http();
+// import linkobject class
+require_once CLASSES_DIR.'linkobject.php';
+
+// create and output linkobject object
+$http = new linkobject();
 
 // control http object output
 echo '<pre>';
@@ -57,15 +60,4 @@ $http->set('tund', 'php programmeerimisvahendid');
 echo '<pre>';
 print_r($http->vars);
 echo '<pre>';
-
-// linkobject class testing
-// import linkobject class
-require_once CLASSES_DIR.'linkobject.php';
-// create linkobject type object
-$linkobject = new linkobject();
-// control linkobject output
-echo '<pre>';
-print_r($linkobject);
-echo '<pre>';
-
 ?>
