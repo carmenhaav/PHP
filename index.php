@@ -53,11 +53,16 @@ echo HTTP_HOST.'<br />';
 echo '<hr />';
 
 // create http data pairs and set up into $http->vars array
-$http->set('kasutaja', 'Anna');
+$http->set('kasutaja', 'Carmen');
 $http->set('tund', 'php programmeerimisvahendid');
 
 // control $http->vars output
 echo '<pre>';
 print_r($http->vars);
 echo '<pre>';
+
+// control linkobject pair creation
+$link = ''; // empty link for data pairs
+$http->addToLink($link, 'kasutaja', 'Carmen');
+$http->addToLink($link, 'parool', 'qwerty');
 ?>
