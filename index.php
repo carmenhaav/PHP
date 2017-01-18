@@ -45,9 +45,9 @@ echo '<pre>';
 echo $tmpl->parse();
 
 // control http object output
-echo '<pre>';
+/*echo '<pre>';
 print_r($http);
-echo '<pre>';
+echo '<pre>';*/
 
 // control http constants
 echo REMOTE_ADDR.'<br />';
@@ -61,9 +61,9 @@ $http->set('kasutaja', 'Carmen');
 $http->set('tund', 'php programmeerimisvahendid');
 
 // control $http->vars output
-echo '<pre>';
+/*echo '<pre>';
 print_r($http->vars);
-echo '<pre>';
+echo '<pre>';*/
 
 // control link creation
 $link = $http->getLink(array('kasutaja'=>'Carmen', 'parool'=>'qwerty'));
