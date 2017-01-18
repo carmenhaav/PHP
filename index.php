@@ -10,6 +10,7 @@
 define ('CLASSES_DIR', 'classes/');
 define ('TMPL_DIR', 'tmpl/');
 define ('STYLE_DIR', 'css/');
+define('ACTS_DIR', 'acts/');
 require_once CLASSES_DIR.'template.php';
 
 // create an empty template object
