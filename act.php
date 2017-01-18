@@ -16,6 +16,7 @@ if (file_exists($fn) and is_file($fn) and is_readable($fn)){
 	// import act file
 	require_once $fn;
 } else{
+	// if act file doesn't exist
 	// define default act file path
 	$fn = ACTS_DIR.DEFAULT_ACT.'.php';
 	
