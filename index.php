@@ -69,9 +69,13 @@ echo '<pre>';*/
 $link = $http->getLink(array('kasutaja'=>'Carmen', 'parool'=>'qwerty'));
 // echo $link.'<br />';
 // control http output
-echo '<pre>';
+/*echo '<pre>';
 print_r($http);
-echo '<pre>';
+echo '<pre>';*/
 // control element value by name
-echo $http->set('act');
+// echo $http->set('act');
+
+// control actions
+// import act
+require_once 'act.php';
 ?>
