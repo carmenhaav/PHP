@@ -5,6 +5,8 @@
  * Date: 19.01.2017
  * Time: 12:19
  */
+
+//  framework configuration
 // create and template object and use it
 define ('CLASSES_DIR', 'classes/'); // classes path
 define ('TMPL_DIR', 'tmpl/'); // templates path
