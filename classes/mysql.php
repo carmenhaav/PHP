@@ -23,6 +23,7 @@ class mysql
 		$this->user = $u;
 		$this->pass = $p;
 		$this->dbname = $dn;
+		$this->connect();
 	}// construct
 
 	// connect to database server and use database
@@ -33,5 +34,16 @@ class mysql
 			exit;
 		}
 	}
+
+	// query to database
+	function query($sql){
+		$res = mysqli_query($this->conn, $sql);
+		if ($res === FALSE){
+			echo 'Viga päringus <b>'.$sql.'</b><br />';
+			echo mysqli_error().'<br />';
+			exit;
+		}
+		return $res;
+	}// query
 }// class end
 ?>

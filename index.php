@@ -71,9 +71,11 @@ echo '<pre>';*/
 require_once 'act.php';
 
 // control database object
-// create connection to database server
-$db->connect();
+// create test query
+$sql = 'select now();';
+$res = $db->query($sql);
+// control database query
 echo '<pre>';
-print_r($db);
+print_r($res);
 echo '<pre>';
 ?>
