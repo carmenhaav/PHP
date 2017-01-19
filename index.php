@@ -72,7 +72,7 @@ require_once 'act.php';
 
 // control database object
 // create test query
-$sql = 'select now();';
+$sql = 'select now;';
 $res = $db->query($sql);
 // control database query
 echo '<pre>';
