@@ -7,6 +7,9 @@
  * Time: 12:58
  */
 
+// import configuration
+require_once 'conf.php';
+
 // create an empty template object
 $tmpl = new template('main');
 
