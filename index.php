@@ -74,13 +74,14 @@ require_once 'act.php';
 // create test query
 $sql = 'select now();';
 $res = $db->getArray($sql);
+$sql = 'select now();';
+$res = $db->getArray($sql);
 // control database query
 echo '<pre>';
 print_r($res);
 echo '<pre>';
 
 // query time control
-echo '<pre>';
-print_r($db->history);
-echo '<pre>';
+$db->showHistory();
+
 ?>
