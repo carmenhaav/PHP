@@ -14,6 +14,7 @@ class mysql
 	var $user = false; // database server user
 	var $pass = false; // database server password
 	var $dbname = false; // database server user's database
+	var $history = array(); // database query log array
 
 	// class methods
 	// construct
@@ -33,6 +34,12 @@ class mysql
 			echo 'Probleem andmebaasi ühendamisega<br />';
 			exit;
 		}
+	}// connect
+	
+	// control query time
+	function getMicrotime(){
+		list($usec, $sec) = explode(" ", microtime());
+		return ((float)$usec + (float)$sec);
 	}
 
 	// query to database
@@ -58,5 +65,6 @@ class mysql
 		}
 		return $data;
 	}// getArray
+	
 }// class end
 ?>

@@ -72,10 +72,12 @@ require_once 'act.php';
 
 // control database object
 // create test query
-$sql = 'select now;';
-$res = $db->query($sql);
+$sql = 'select now();';
+$res = $db->getArray($sql);
 // control database query
 echo '<pre>';
 print_r($res);
 echo '<pre>';
+
+$db->getMicrotime();
 ?>
