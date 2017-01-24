@@ -16,7 +16,17 @@ $sql = 'select content_id, title from content where '.'parent_id="0" and show_in
 $sql = $sql.'order by sort ASC';
 // get menu data from database
 $res = $db->getArray($sql);
-
+// create menu items from query result
+if ($res != false){
+ foreach ($res as $page){
+  // add content to menu item
+  $item->set('name', $page['title']);
+  $link = $http->getLink(array('page_id'=>$page['content_id']));
+  $item->set('link', $link);
+  // add item to menu
+  $menu->add('items', $item->parse());
+ }
+}
 // menu item creation - begin
 
 //add pair of template element names and real values
