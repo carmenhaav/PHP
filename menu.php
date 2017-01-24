@@ -34,6 +34,7 @@ if ($res != false){
   //print_r($res);
   //echo '</pre>';
   $page = $res[0];
+  $http->set('page_id', $page['content_id']);
   $http->set('content', $page['content']);
  }
 }
