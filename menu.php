@@ -17,15 +17,21 @@ $page_id = $http->get('page_id');
 $sql = 'select * from content where '.'content_id="'.$page_id'"';
 // query to database
 $res = $db->getArray($sql);
-// create menu items from query result
+// if query is with result
 if ($res != false){
  foreach ($res as $page){
   // add content to menu item
-  $item->set('name', $page['title']);
-  $link = $http->getLink(array('page_id'=>$page['content_id']));
-  $item->set('link', $link);
+  //$item->set('name', $page['title']);
+  //$link = $http->getLink(array('page_id'=>$page['content_id']));
+  //$item->set('link', $link);
   // add item to menu
-  $menu->add('items', $item->parse());
+  //$menu->add('items', $item->parse());
+
+  // control result test output
+
+  echo '<pre>';
+  print_r($res);
+  echo '</pre>';
  }
 }
 // menu item creation - begin
