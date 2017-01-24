@@ -30,9 +30,11 @@ if ($res != false){
 
   // control result test output
 
-  echo '<pre>';
-  print_r($res);
-  echo '</pre>';
+  //echo '<pre>';
+  //print_r($res);
+  //echo '</pre>';
+  $page = $res[0];
+  $http->set('content', $page['content']);
  }
 }
 // menu item creation - begin
