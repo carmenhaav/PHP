@@ -12,9 +12,10 @@ $menu = new template('menu.menu'); // menu directory is file menu.html menu/menu
 $item = new template('menu.item');
 //
 // main menu content query
-$sql = 'select content_id, title from content where '.'parent_id="0" and show_in_menu="1"';
-$sql = $sql.'order by sort ASC';
-// get menu data from database
+// get page_id from url
+$page_id = $http->get('page_id');
+$sql = 'select * from content where '.'content_id="'.$page_id'"';
+// query to database
 $res = $db->getArray($sql);
 // create menu items from query result
 if ($res != false){
