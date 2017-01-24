@@ -14,7 +14,8 @@ $item = new template('menu.item');
 // main menu content query
 // get page_id from url
 $page_id = $http->get('page_id');
-$sql = 'select * from content where '.'content_id="'.$page_id'"';
+// query without page_id
+$sql = 'select * from content;';
 // query to database
 $res = $db->getArray($sql);
 // if query is with result
