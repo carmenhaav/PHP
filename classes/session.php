@@ -102,5 +102,16 @@ class session
 	}// checkSession
 
 	// delete session by request
+	function deleteSession(){
+		if($this->sid !== false){
+			$sql = 'delete from session where '.
+				'sid='.fixDb($this->sid);
+			$this->db->query($sql);
+			$this->sid = false;
+			$this->http->del('sid');
+		}// deleteSession
+
+		
+	}
 }// class end
 ?>
