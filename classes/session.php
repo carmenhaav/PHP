@@ -109,9 +109,7 @@ class session
 			$this->db->query($sql);
 			$this->sid = false;
 			$this->http->del('sid');
-		}// deleteSession
-
-		
-	}
+		}
+	}// deleteSession
 }// class end
 ?>
