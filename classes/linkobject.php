@@ -25,6 +25,9 @@ class linkobject extends http
 	var $delim = '&amp;'; // & html tag name1=value1&name2=value2
 	var $eq = '='; // = for URL element pair element_name = element_value
 
+	// add if exists
+	var $aie = array('sid'=>'sid');
+
 	// class methods to help to make the url link
 	// construct
 	// create base URL: http//XXX.XXX.XXX.XXX/path_to_file.php
@@ -50,10 +53,24 @@ class linkobject extends http
 	 * @param array $add
 	 * @return bool|string
 	 */
-	function getLink($add = array()) {
+	function getLink($add = array(), $aie = array(), $not = array()) {
 		$link = '';
 		foreach ($add as $name => $val) {
 			$this->addToLink($link, $name, $val);
+		}
+
+		foreach ($aie as $name){
+			$val = $this->get($name);
+			if ($val !== false){
+				$this->addToLink($link, $name, $val);
+			}
+		}
+
+		foreach ($this->aie as $name){
+			$val = $this->get($name);
+			if ($val !== false and !in_array($name, $not)){
+				$this->addToLink($link, $name, $val);
+			}
 		}
 		// control if link is not empty
 		if($link !='') {
