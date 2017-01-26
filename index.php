@@ -86,4 +86,8 @@ echo '<pre>';
 // query time control
 $db->showHistory();
 
+// control session output
+echo '<pre>';
+print_r($sess);
+echo '<pre>';
 ?>
