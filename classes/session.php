@@ -111,5 +111,38 @@ class session
 			$this->http->del('sid');
 		}
 	}// deleteSession
+
+	// set up data for http object - pairs element_name => element value
+	function set($name, $val){
+		$this->vars[$name] = $val;
+	}// set
+
+	// get element_value according to the element_name
+	function get($name){
+		// if element with such name is exists
+		if(isset($this->vars[$name])){
+			return $this->vars[$name];
+		}
+		// if element with such name is not exists
+		return false;
+	}// get
+
+	// delete http data element
+	function del($name){
+		if(isset($this->vars[$name])){
+			unset($this->vars[$name]);
+		}
+	} // del
+
+	// update session data
+	function flush(){
+		if ($this->sid !== false){
+			$sql = 'update session set changed=now(), '.
+				'svars='.fixDb(serialize($this->vars)).
+				'where sid='.fixDb($this->sid);
+			$this->db->query($sql);
+		}
+	}
+
 }// class end
 ?>
