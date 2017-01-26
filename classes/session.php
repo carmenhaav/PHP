@@ -10,7 +10,7 @@ class session
 {// class begin
 	// class variables
 	var $sid = false; // session id
-	var $vars = false;
+	var $vars = array();
 	var $http = false;
 	var $db = false;
 	var $anonymous = true;
@@ -80,10 +80,27 @@ class session
 				}
 				else{
 					$this->sid = false;
+					$this->http->del('sid');
 				}
+				define('ROLE_ID', 0);
+				define('USER_ID', 0);
+			} else{
+				$vars = unserialize($res[0]['svars']);
+				if(!is_array($vars)){
+					$vars = array();
+				}
+				$this->vars = $vars;
+				$user_data = unserialize($res[0]['user_data']);
+				define('ROLE_ID', $user_data['role_id']);
+				define('USER_ID', $user_data['user_id']);
+				$this->user_data = $user_data;
 			}
+		} else{
+			define('ROLE_ID', 0);
+			define('USER_ID', 0);
 		}
 	}// checkSession
 
+	// delete session by request
 }// class end
 ?>
