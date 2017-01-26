@@ -22,6 +22,7 @@ class session
 		$this->http = &$http;
 		$this->db = &$db;
 		$this->sid = $http->get('sid');
+		$this->createSession();
 	}// construct
 
 	// create session
@@ -39,7 +40,7 @@ class session
 
 		// insert data to database
 		// serialize - puts out like text
-		$sql = 'insert into session set'.
+		$sql = 'insert into session set '.
 			'sid='.fixDb($sid).', '.
 			'user_id='.fixDb($user['user_id']).', '.
 			'user_data='.fixDb(serialize($user)).', '.
@@ -50,7 +51,7 @@ class session
 		// setup session id number
 		$this->sid = $sid;
 		$this->http->set('sid', $sid);
-		
+
 	}// createSession
 }// class end
 ?>
