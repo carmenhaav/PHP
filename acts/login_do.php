@@ -16,9 +16,10 @@ if($res === false){
 	$sess->set('login_error', tr('Viga sisselogimisel'));
 
 	$link = $http->getLink(array('act'=>'login'), array('username'));
+	$http->redirect($link);
 }
 else{
 	$sess->createSession($res[0]);
-	// now we have to redirect to index.php
+	$http->redirect();
 }
 ?>
