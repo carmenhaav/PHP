@@ -14,6 +14,7 @@ define ('STYLE_DIR', 'css/'); // style path
 define('ACTS_DIR', 'acts/'); // acts path
 define('LIB_DIR', 'lib/'); // lib path
 define('DEFAULT_ACT', 'default'); // default act file name
+define('ADMIN_DIR', 'admin/');// admin path
 
 // user roles
 define('ROLE_NONE', 0);
