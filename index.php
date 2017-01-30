@@ -25,24 +25,15 @@ $tmpl->set('menu', $menu->parse());
 $tmpl->set('nav_bar', 'minu navigatsioon');
 
 // allow to use user data
-$tmpl->set('nav_bar', $sess->user_data['username']);
+//$tmpl->set('nav_bar', $sess->user_data['username']);
 
 $tmpl->set('lang_bar', 'minu keeleriba');
+
 // $tmpl->set('content', 'minu sisu');
 // allow to use default act
 $tmpl->set('content', $http->get('content'));
-/*
-// control the content of the template object
-echo '<pre>';
-print_r($tmpl);
-echo '<pre>';
-*/
-echo $tmpl->parse();
 
-// control http object output
-/*echo '<pre>';
-print_r($http);
-echo '<pre>';*/
+echo $tmpl->parse();
 
 // control http constants
 echo REMOTE_ADDR.'<br />';
@@ -64,14 +55,6 @@ echo '<pre>';*/
 $link = $http->getLink(array('kasutaja'=>'Carmen', 'parool'=>'qwerty'));
 // echo $link.'<br />';
 
-// control http output
-/*echo '<pre>';
-print_r($http);
-echo '<pre>';*/
-
-// control element value by name
-// echo $http->set('act');
-
 // control actions
 // import act
 require_once 'act.php';
@@ -82,17 +65,17 @@ $sql = 'select now();';
 $res = $db->getArray($sql);
 $sql = 'select now();';
 $res = $db->getArray($sql);
+
 // control database query
 echo '<pre>';
 print_r($res);
 echo '<pre>';
 
+// session update on the main page
+$sess->flush();
 
 // query time control
 $db->showHistory();
-
-// session update on the main page
-$sess->flush();
 
 // control session output
 echo '<pre>';
