@@ -9,7 +9,7 @@
 $form = new Template('login');
 
 // add template element names and real values
-$form->set('error', $sess->('login_error'));
+$form->set('error', $sess->get('login_error'));
 $sess->del('login_error');
 
 $form->set('submit', tr('Logi sisse'));
