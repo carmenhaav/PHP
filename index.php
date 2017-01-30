@@ -83,6 +83,9 @@ echo '<pre>';
 print_r($res);
 echo '<pre>';
 
+// session update on the main page
+$sess->flush();
+
 // query time control
 $db->showHistory();
 
