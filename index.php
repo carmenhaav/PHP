@@ -13,6 +13,9 @@ require_once 'conf.php';
 // create an empty template object
 $tmpl = new template('main');
 
+// require language control
+require_once (BASE_DIR.'lang.php');
+
 //add pair of template element names and real values
 $tmpl->set('style', STYLE_DIR.'style.css');
 $tmpl->set('header', 'minu lehe pealkiri');
@@ -31,7 +34,7 @@ require_once 'act.php';
 // allow to use user data
 $tmpl->set('nav_bar', $sess->user_data['username']);
 
-$tmpl->set('lang_bar', LANG_ID);
+//$tmpl->set('lang_bar', LANG_ID);
 
 //$tmpl->set('lang_bar', 'minu keeleriba');
 

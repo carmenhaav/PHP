@@ -34,4 +34,5 @@ foreach ($siteLangs as $lang_id => $lang_name){
 		$tmpl->add('lang_bar', $sep);
 	}
 }
+
 ?>
