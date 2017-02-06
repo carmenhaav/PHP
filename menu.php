@@ -47,11 +47,23 @@ if ($res != false){
   //echo '<pre>';
   //print_r($res);
   //echo '</pre>';
-  $page = $res[0];
-  $http->set('page_id', $page['content_id']);
-  $http->set('content', $page['content']);
+  //$page = $res[0];
+  //$http->set('page_id', $page['content_id']);
+  //$http->set('content', $page['content']);
  }
 }
+
+// if user is admin or user
+// create possibilty for log out
+if (USER_ID != ROLE_NONE)
+{
+ $link = $http->getLink(array('act' => 'logout'));
+ $item->set('link', $link);
+ $item-> set('name', 'Logi v&auml;ja');
+ $menu->add('items', $item->parse());
+}
+
+$tmpl->set('menu', $menu->parse());
 // menu item creation - begin
 
 //add pair of template element names and real values
