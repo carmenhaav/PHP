@@ -48,4 +48,12 @@ $sess = new session($http, $db);
 // language support
 $lang_id = DEFAULT_LANG;
 $http->set('lang_id', $lang_id);
+
+// langs used in site
+$siteLangs = array(
+	'et' => 'estonian',
+	'en' => 'english',
+	'ru' => 'russian'
+);
+
 ?>
