@@ -31,6 +31,8 @@ require_once 'act.php';
 // allow to use user data
 //$tmpl->set('nav_bar', $sess->user_data['username']);
 
+$tmpl->set('lang_bar', LANG_ID);
+
 $tmpl->set('lang_bar', 'minu keeleriba');
 
 // $tmpl->set('content', 'minu sisu');
