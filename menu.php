@@ -36,7 +36,7 @@ $res = $db->getArray($sql);
 if ($res != false){
  foreach ($res as $page){
   // add content to menu item
-  $item->set('name', $page['title']);
+  $item->set('name', tr($page['title']));
   $link = $http->getLink(array('page_id'=>$page['content_id']));
   $item->set('link', $link);
   // add item to menu
@@ -59,7 +59,7 @@ if ('USER_ID' != ROLE_NONE)
 {
  $link = $http->getLink(array('act' => 'logout'));
  $item->set('link', $link);
- $item-> set('name', 'Logi v&auml;ja');
+ $item-> set('name', tr('Logi v&auml;ja'));
  $menu->add('items', $item->parse());
 }
 
