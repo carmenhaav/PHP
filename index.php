@@ -24,6 +24,10 @@ $tmpl->set('menu', $menu->parse());
 
 $tmpl->set('nav_bar', 'minu navigatsioon');
 
+// control actions
+// import act
+require_once 'act.php';
+
 // allow to use user data
 //$tmpl->set('nav_bar', $sess->user_data['username']);
 
@@ -55,9 +59,6 @@ echo '<pre>';*/
 $link = $http->getLink(array('kasutaja'=>'Carmen', 'parool'=>'qwerty'));
 // echo $link.'<br />';
 
-// control actions
-// import act
-require_once 'act.php';
 
 // control database object
 // create test query
