@@ -22,7 +22,8 @@ class session
 		$this->http = &$http;
 		$this->db = &$db;
 		$this->sid = $http->get('sid');
-		$this->createSession();
+		//$this->createSession();
+		$this->checkSession();
 	}// construct
 
 	// set anonymous

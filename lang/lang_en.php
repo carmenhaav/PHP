@@ -7,8 +7,8 @@
  */
 // lang/lang_en.php
 $_trans = array(
-	'Esimene' => 'First',
-	'Teine' => 'Second',
+	'Esimene leht' => 'First',
+	'Teine leht' => 'Second',
 	'Minu lehe pealkiri' => 'My page heading',
 	'Logi v&auml;ja' => 'Logout',
 	'Kasutajanimi' => 'Username',
