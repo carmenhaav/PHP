@@ -55,5 +55,11 @@ $siteLangs = array(
 	'en' => 'english',
 	'ru' => 'russian'
 );
-
+// get lang_id from url
+$lang_id = $http->get('lang_id');
+if(!isset($siteLangs[$lang_id])){
+	// if such lang id is not supported
+	$lang_id = DEFAULT_LANG; // use default lang - et
+	$http->set('lang_id', $lang_id); // fix used lang_id
+}
 ?>
