@@ -16,7 +16,7 @@ $sql = 'select content_id, title from content where '.
     'parent_id = 0 and '.
     'show_in_menu = 1';
 // display for admin
-if (ROLE_ID != ROLE_ADMIN)
+if ('ROLE_ID' != ROLE_ADMIN)
 {
  $sql .= ' and is_hidden = 0';
 }
@@ -55,7 +55,7 @@ if ($res != false){
 
 // if user is admin or user
 // create possibilty for log out
-if (USER_ID != ROLE_NONE)
+if ('USER_ID' != ROLE_NONE)
 {
  $link = $http->getLink(array('act' => 'logout'));
  $item->set('link', $link);
