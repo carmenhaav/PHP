@@ -11,6 +11,20 @@
 $menu = new template('menu.menu'); // menu directory is file menu.html menu/menu.html
 $item = new template('menu.item');
 //
+// display menu
+$sql = 'select content_id, title from content where '.
+    'parent_id = 0 and '.
+    'show_in_menu = 1';
+// display for admin
+if (ROLE_ID != ROLE_ADMIN)
+{
+ $sql .= ' and is_hidden = 0';
+}
+$sql .= ' order by sort asc';
+$res = $db->getArray($sql);
+
+
+
 // main menu content query
 // get page_id from url
 $page_id = $http->get('page_id');
@@ -22,11 +36,11 @@ $res = $db->getArray($sql);
 if ($res != false){
  foreach ($res as $page){
   // add content to menu item
-  //$item->set('name', $page['title']);
-  //$link = $http->getLink(array('page_id'=>$page['content_id']));
-  //$item->set('link', $link);
+  $item->set('name', $page['title']);
+  $link = $http->getLink(array('page_id'=>$page['content_id']));
+  $item->set('link', $link);
   // add item to menu
-  //$menu->add('items', $item->parse());
+  $menu->add('items', $item->parse());
 
   // control result test output
 
