@@ -26,7 +26,7 @@ class linkobject extends http
 	var $eq = '='; // = for URL element pair element_name = element_value
 
 	// add if exists
-	var $aie = array('sid'=>'sid');
+	var $aie = array('lang_id','sid'=>'sid');
 
 	// class methods to help to make the url link
 	// construct
