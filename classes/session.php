@@ -10,11 +10,11 @@ class session
 {// class begin
 	// class variables
 	var $sid = false; // session id
-	var $vars = array();
-	var $http = false;
-	var $db = false;
-	var $anonymous = true;
-	var $timeout = 1800;
+	var $vars = array(); // session variables and data
+	var $http = false; // http data
+	var $db = false; // database - session data store to database
+	var $anonymous = true; // iif possible to use anonymous user
+	var $timeout = 1800; // session timeout in sec
 
 	// class methods
 	function __construct(&$http, &$db)
@@ -50,12 +50,12 @@ class session
 
 		// insert data to database
 		// serialize - puts out like text
-		$sql = 'insert into session set '.
+		$sql = 'INSERT INTO session SET '.
 			'sid='.fixDb($sid).', '.
 			'user_id='.fixDb($user['user_id']).', '.
 			'user_data='.fixDb(serialize($user)).', '.
 			'login_ip='.fixDb(REMOTE_ADDR).', '.
-			'created=now()';
+			'created=NOW()';
 		$this->db->query($sql);
 
 		// setup session id number

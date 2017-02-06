@@ -22,22 +22,22 @@ $tmpl->set('header', 'minu lehe pealkiri');
 require_once 'menu.php';
 $tmpl->set('menu', $menu->parse());
 
-$tmpl->set('nav_bar', 'minu navigatsioon');
+//$tmpl->set('nav_bar', 'minu navigatsioon');
 
 // control actions
 // import act
 require_once 'act.php';
 
 // allow to use user data
-//$tmpl->set('nav_bar', $sess->user_data['username']);
+$tmpl->set('nav_bar', $sess->user_data['username']);
 
 $tmpl->set('lang_bar', LANG_ID);
 
-$tmpl->set('lang_bar', 'minu keeleriba');
+//$tmpl->set('lang_bar', 'minu keeleriba');
 
 // $tmpl->set('content', 'minu sisu');
 // allow to use default act
-$tmpl->set('content', $http->get('content'));
+//$tmpl->set('content', $http->get('content'));
 
 echo $tmpl->parse();
 
