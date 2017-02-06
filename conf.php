@@ -14,7 +14,7 @@ define ('STYLE_DIR', 'css/'); // style path
 define('ACTS_DIR', 'acts/'); // acts path
 define('LIB_DIR', 'lib/'); // lib path
 define('ADMIN_DIR', 'admin/');// admin path
-
+define('LANG_DIR', 'lang/'); // lang path
 // import useful functions
 require_once LIB_DIR.'utils.php';
 
