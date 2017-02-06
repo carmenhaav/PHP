@@ -44,4 +44,8 @@ $db = new mysql(DBHOST, DBUSER, DBPASS, DBNAME);
 
 // create session object
 $sess = new session($http, $db);
+
+// language support
+$lang_id = DEFAULT_LANG;
+$http->set('lang_id', $lang_id);
 ?>
