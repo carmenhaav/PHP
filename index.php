@@ -14,7 +14,7 @@ require_once 'conf.php';
 $tmpl = new template('main');
 
 // require language control
-require_once (BASE_DIR.'lang.php');
+require_once 'lang.php';
 
 //add pair of template element names and real values
 $tmpl->set('style', STYLE_DIR.'style.css');
