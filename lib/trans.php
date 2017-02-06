@@ -28,5 +28,11 @@ function tr($txt)
 			$trans = array();
 		}
 	}
+	if (isset($trans[$txt]))
+	{
+		return $trans[$txt];
+	}
+	// if cannot find lang, return base text
+	return $txt;
 }
 ?>
