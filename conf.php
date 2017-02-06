@@ -62,4 +62,5 @@ if(!isset($siteLangs[$lang_id])){
 	$lang_id = DEFAULT_LANG; // use default lang - et
 	$http->set('lang_id', $lang_id); // fix used lang_id
 }
+define('LANG_ID', $lang_id); // define useful constant which describes right now active lang
 ?>
