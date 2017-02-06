@@ -9,8 +9,7 @@
 $username = $http->get('username');
 $password = $http->get('password');
 
-$sql = 'select * form user where '.'username='.fixDb($username).' AND '.'password='.fixDb(md5($password)).' and '.'is_active=1';
-$res = $db->getArray($sql);
+$sql = 'select * from user where '.'username='.fixDb($username).' AND '.'password='.fixDb(md5($password)).' and '.'is_active=1';$res = $db->getArray($sql);
 
 if($res === false){
 	$sess->set('login_error', tr('Viga sisselogimisel'));
