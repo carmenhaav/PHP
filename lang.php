@@ -28,5 +28,10 @@ foreach ($siteLangs as $lang_id => $lang_name){
 	$item->set('link', $link);
 	$item->set('name', $lang_name);
 	$tmpl->add('lang_bar', $item->parse());
+
+	// add lang separator, but not for last lang
+	if ($count < count($siteLangs)){
+		$tmpl->add('lang_bar', $sep);
+	}
 }
 ?>
