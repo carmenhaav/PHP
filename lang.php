@@ -12,7 +12,7 @@ $count = 0;
 // all languages are in array
 foreach ($siteLangs as $lang_id => $lang_name){
 	// expand language separators
-	$count++
+	$count++;
 	// if active language, use active template
 	if ($lang_id == LANG_ID){
 		$item = new Template('lang.active');
@@ -34,5 +34,4 @@ foreach ($siteLangs as $lang_id => $lang_name){
 		$tmpl->add('lang_bar', $sep);
 	}
 }
-
 ?>
